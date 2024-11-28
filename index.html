@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Painting Jasa Pengecatan Motor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1{
+            color: #a6ff9e;
+        }
+
+        h2 {
+            color: #000000;
+        }
+
+        h3 {
+            color: #000000;
+        }
+
+        p {
+            color: #000000;
+        }
+
+        /* Header section */
+        header {
+            background: url('img2/background3.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        header a {
+            display: inline-block;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Animasi Fade In untuk teks */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Efek Hover pada Tombol */
+    header a:hover {
+        background-color: #ff9933;
+        transform: translateY(-5px); /* Efek naik sedikit saat hover */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+    }
+
+        /* Styling navbar */
+        nav {
+            background-color: #333;
+            padding: 1px 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Membuat navbar tetap di atas */
+            top: 0; /* Tetap di atas saat scroll */
+            z-index: 1000; /* Memastikan navbar tetap di atas konten lainnya */
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px; /* Menambahkan jarak antar item menu */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        /* Styling ikon pada menu */
+        nav ul li a i {
+            margin-right: 8px; /* Jarak antara ikon dan teks */
+            font-size: 20px; /* Ukuran ikon */
+        }
+
+        /* Menata ikon sosial media */
+        .social-icons {
+            display: flex;
+            align-items: center;
+            padding: 22px; 
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            margin-left: 15px;
+            margin-right: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1da1f2; /* Warna biru untuk hover */
+        }
+
+        /* Tombol hamburger (menu pada mobile) */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        /* Responsif: Menyembunyikan menu dan menampilkan hamburger */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            .hamburger {
+                display: block;
+                padding: 22px;   
+            }
+
+            nav.open ul {
+                display: flex;
+            }
+        }
+
+        /* Grid section */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+
+        .grid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Basic styling for service items */
+    .service-item {
+        padding: 20px;
+        color: #000000;
+        text-align: center;
+        background: #ffffff;
+        overflow: hidden;
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item h3 {
+        margin: 10px 0 5px;
+    }
+
+    .service-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .service-item p {
+        margin: 0;
+    }
+
+    
+
+    .item-info p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+    .item-info h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+    .item-info {
+            padding: 15px;
+        }
+
+    /* Gaya untuk tombol */
+    .btn-order {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+    
+        .btn-order:hover {
+            background: #0056b3;
+        }
+
+    
+
+    /* Rounded square shape */
+    .rounded-square {
+        border-radius: 20px;
+    }
+
+    /* Center content inside shapes */
+    .rounded-square {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .pricing-table th {
+            background: #f4f4f4;
+        }
+
+        /* Section styles */
+        .section {
+            /*background: url('C:/Users/user/Downloads/background.jpg') no-repeat center center/cover;*/
+            padding: 50px 20px;
+            background-color: #e6e6e6;
+            color: rgb(32, 32, 32);
+            padding: 40px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Portfolio slider */
+        .slider {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Contact form */
+        form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        form input, form textarea, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            font-size: 1rem;
+        }
+
+        form button:hover {
+            background: #e55a00;
+        }
+
+        .service-item:hover {
+        transform: translateY(-10px); /* Efek hover naik sedikit */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Penambahan bayangan lebih besar */
+    }
+
+    .service-item img:hover {
+        transform: scale(1.1); /* Efek zoom pada gambar */
+    }
+            @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header style="background: url('img2/background3.jpg') no-repeat center center/cover; color: #fff;  text-align: center; padding: 100px 20px; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div> <!-- Overlay gelap -->
+        <h1 style="color: white; font-size: 3rem; font-family: 'Arial', sans-serif; font-weight: bold, lighter; animation: fadeIn 2s ease-out 0.5s forwards;">ANA PAINTING</h1>
+        <h2 style="color: white; font-size: 2rem; font-family: 'Arial', sans-serif; font-weight: lighter; margin: 20px 0; opacity: 0; animation: fadeIn 2s ease-out 0.5s forwards;">
+            Jasa Pengecatan Motor
+        </h2>
+        <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+            Pesan Sekarang
+        </a>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#services">
+                    <i class="fas fa-cogs" style="color: #007BFF;"></i> Layanan Kami
+                </a>
+            </li>
+            <li>
+                <a href="#new-models">
+                    <i class="fas fa-spray-can" style="color: #28A745;"></i> Model
+                </a>
+            </li>
+            <li>
+                <a href="#portfolio">
+                    <i class="fas fa-images" style="color: #FFC107;"></i> Hasil Akhir
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    <i class="fas fa-phone-alt" style="color: #DC3545;"></i> Hubungi Kami
+                </a>
+            </li>
+        </ul>
+
+        <!-- Ikon Sosial Media -->
+        <div class="social-icons">
+            <img src="C:\Users\user\Documents\landingpage\img2\logo.png" 
+                alt="B Corp Logo" 
+                style="vertical-align: middle; width: 70px; height: auto;">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Layanan Kami -->
+    <section class="section" id="services" style="animation: fadeIn 2s ease-out 0.5s forwards;">
+        <h2>Layanan Kami</h2>
+        <div class="grid">
+            <div class="service-item rounded-square">
+                <h3><i class="fas fa-spray-can fa-4x" style="color: #27ae60; animation: spin 4s infinite;"></i><br> Full Body Painting</h3>
+                <p>Pengecatan seluruh body motor untuk tampilan baru yang menyeluruh.</p>
+            </div>
+            <div class="service-item rounded-square">
+                <h3><i class="fas fa-palette fa-4x" style="color: #e67e22; animation: spin 4s infinite;"></i> <br> Custom Design</h3>
+                <p>Desain cat sesuai permintaan pelanggan untuk motor yang unik dan personal.</p>
+            </div>
+            <div class="service-item rounded-square">
+                <h3><i class="fas fa-undo fa-4x" style="color: #e74c3c; animation: spin 4s infinite;"></i><br> Restorasi Cat Lama</h3>
+                <p>Memperbarui cat yang kusam atau rusak agar terlihat seperti baru.</p>
+            </div>
+            <div class="service-item rounded-square">
+                <h3><i class="fas fa-shield-alt fa-4x" style="color: #3498db; animation: spin 4s infinite;"></i><br> Pelapisan Anti-Gores</h3>
+                <p>Perlindungan tambahan agar cat lebih tahan lama.</p>
+            </div>
+        </div>
+        
+        <h2>Harga & Paket</h2>
+        <div class="service-item rounded-square">
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Paket Kecil</th>
+                    <th>Layanan</th>
+                    <th>Harga Mulai Dari</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic</td>
+                    <td>Pengecatan body motor standar</td>
+                    <td>Rp. 250.000</td>
+                </tr>
+                <tr>
+                    <td>Custom</td>
+                    <td>Custom design</td>
+                    <td>Rp. 400.000</td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>Full body + pelapisan anti-gores</td>
+                    <td>Rp. 800.000</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Paket Sedang</th>
+                    <th>Layanan</th>
+                    <th>Harga Mulai Dari</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic</td>
+                    <td>Pengecatan body motor standar</td>
+                    <td>Rp. 400.000</td>
+                </tr>
+                <tr>
+                    <td>Custom</td>
+                    <td>Custom design</td>
+                    <td>Rp. 700.000</td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>Full body + pelapisan anti-gores</td>
+                    <td>Rp. 1.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Paket Gede</th>
+                    <th>Layanan</th>
+                    <th>Harga Mulai Dari</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic</td>
+                    <td>Pengecatan body motor standar</td>
+                    <td>Rp. 500.000</td>
+                </tr>
+                <tr>
+                    <td>Custom</td>
+                    <td>Custom design</td>
+                    <td>Rp. 1.000.000</td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>Full body + pelapisan anti-gores</td>
+                    <td>Rp. 1.500.000</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <!-- New Models Section -->
+    <section class="section" id="new-models">
+        <h2>Model</h2>
+        <div class="grid">
+            <div class="service-item">
+                <img src="img2/gambar1.png" alt="Model 1">
+                <div class="item-info">
+                    <h3>Model 1</h3>
+                    <p>Harga: Rp 1.500.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar2.png" alt="Model 2">
+                <div class="item-info">
+                    <h3>Model 2</h3>
+                    <p>Harga: Rp 2.000.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar3.png" alt="Model 3">
+                <div class="item-info">
+                    <h3>Model 3</h3>
+                    <p>Harga: Rp 1.800.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar9.png" alt="Model 4">
+                <div class="item-info">
+                    <h3>Model 4</h3>
+                    <p>Harga: Rp 2.200.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar5.png" alt="Model 5">
+                <div class="item-info">
+                    <h3>Model 5</h3>
+                    <p>Harga: Rp 1.700.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar6.png" alt="Model 6">
+                <div class="item-info">
+                    <h3>Model 6</h3>
+                    <p>Harga: Rp 2.500.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar7.png" alt="Model 7">
+                <div class="item-info">
+                    <h3>Model 7</h3>
+                    <p>Harga: Rp 2.300.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="img2/gambar8.png" alt="Model 8">
+                <div class="item-info">
+                    <h3>Model 8</h3>
+                    <p>Harga: Rp 1.900.000</p>
+                    <a href="#contact" style="text-decoration: none; background-color: #0051ff; color: white; padding: 12px 20px; font-size: 1.2rem; font-weight: bold; border-radius: 30px; display: inline-block; margin-top: 30px; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); z-index: 2; position: relative;">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio" style="animation: fadeIn 2s ease-out 0.5s forwards;">
+        <h2>Hasil Akhir</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="img/foto1.png" alt="Portofolio 1">
+                <img src="img/foto2.png" alt="Portofolio 2">
+                <img src="img/foto3.png" alt="Portofolio 3">
+                <img src="img/foto4.png" alt="Portofolio 4">
+                <img src="img/foto5.png" alt="Portofolio 5">
+                <img src="img/foto6.png" alt="Portofolio 6">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+   <!-- Testimonials Section -->
+<section class="section" id="testimonials" style="background: linear-gradient(135deg, #f9f9f9, #f0f0f0); padding: 30px; animation: fadeIn 2s ease-out 0.5s forwards;">
+    <h2 style="margin-bottom: 30px; color: #333; text-align: center; font-family: 'Arial', sans-serif; font-size: 2rem; font-weight: bold;">Apa Kata Klien Kami?</h2>
+    <div class="grid" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div class="service-item rounded-square" style="background: #ffffff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); padding: 30px; width: 250px; border-radius: 10px; transition: transform 0.3s ease;">
+            <img src="C:\Users\user\Documents\landingpage\img2\org1.png" alt="Budi" style="border-radius: 50%; margin-bottom: 15px; border: 3px solid #ff6600; width: 80px; height: 80px; transition: transform 0.3s ease;">
+            <p style="font-style: italic; color: #555; text-align: justify;">"Hasil pengecatannya sangat joss, hasilnya juga sangat memuaskan."</p>
+            <h3 style="margin-top: 10px; color: #333; font-weight: bold;">- Putu Artama</h3>
+        </div>
+        <div class="service-item rounded-square" style="background: #ffffff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); padding: 30px; width: 250px; border-radius: 10px; transition: transform 0.3s ease;">
+            <img src="img2/org2.png" alt="Siti" style="border-radius: 50%; margin-bottom: 15px; border: 3px solid #ff6600; width: 80px; height: 80px; transition: transform 0.3s ease;">
+            <p style="font-style: italic; color: #555; text-align: justify;">"Hasilnya sangat memuaskan tidak sia sia saya menggunakan jasa Ana Painting."</p>
+            <h3 style="margin-top: 10px; color: #333; font-weight: bold;">- Juniana</h3>
+        </div>
+        <div class="service-item rounded-square" style="background: #ffffff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); padding: 30px; width: 250px; border-radius: 10px; transition: transform 0.3s ease;">
+            <img src="img2/org3.png" alt="Andi" style="border-radius: 50%; margin-bottom: 15px; border: 3px solid #ff6600; width: 80px; height: 80px; transition: transform 0.3s ease;">
+            <p style="font-style: italic; color: #555; text-align: justify;">"Cat yang digunakan sangat berkualitas. Sudah beberapa bulan, warnanya masih cerah dan tidak pudar."</p>
+            <h3 style="margin-top: 10px; color: #333; font-weight: bold;">- Nyoman Wijaya</h3>
+        </div>
+        <div class="service-item rounded-square" style="background: #ffffff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); padding: 30px; width: 250px; border-radius: 10px; transition: transform 0.3s ease;">
+            <img src="img2/org4.png" alt="Dewi" style="border-radius: 50%; margin-bottom: 15px; border: 3px solid #ff6600; width: 80px; height: 80px; transition: transform 0.3s ease;">
+            <p style="font-style: italic; color: #555; text-align: justify;">"Saya memilih paket premium dan benar-benar puas dengan hasilnya. Pelapisan anti-goresnya juga sangat membantu."</p>
+            <h3 style="margin-top: 10px; color: #333; font-weight: bold;">- Kadek nanda</h3>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="animation: fadeIn 2s ease-out 0.5s forwards;">
+        <h2>Hubungi Kami</h2>
+        <form onsubmit="sendToWhatsApp(event)">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap Anda">
+        
+            <label for="motor">Jenis Motor:</label>
+            <input type="text" id="motor" name="motor" required placeholder="Masukkan jenis motor Anda (misal: NMAX, Beat, Scopy, dan lain-lain)">
+        
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" required placeholder="Masukkan model cat (misal: Model1, Model2) sesuai dengan gambar">
+        
+            <label for="service">Jenis Layanan:</label>
+            <select id="service" name="service" required>
+                <option value="basic">Basic</option>
+                <option value="custom">Custom</option>
+                <option value="premium">Premium</option>
+            </select>
+        
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tuliskan pesan atau permintaan Anda"></textarea>
+        
+            <button type="submit">Kirim Pesan</button>
+        </form>
+        
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #1c1c1c; color: #fff; padding: 40px 20px;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <!-- Newsletter Section -->
+          <div style="flex: 1; min-width: 300px;">
+            <p style="font-size: 21px; font-weight: bold; color: #ddd;">Sosial Media Kami</p>
+            <p style="font-size: 21px; margin-top: 10px; text-align: justify; color: #ddd;">
+              Ayo bergabung dengan sosial media kami agar update terus dengan hasil-hasil dari pengecatan kami.
+            </p>
+            <div style="margin-top: 20px;">
+                
+                <a href="https://www.tiktok.com" target="_blank">
+                    <i class="fab fa-tiktok" style="color: #FF0050; margin-right: 15px; font-size: 55px;"></i>
+                </a>
+                <a href="https://www.instagram.com/annaproject_22/profilecard/?igsh=ZTF6MjhrajlnMXp4" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram" style="color: #E4405F; margin-right: 15px; font-size: 55px;"></i>
+                </a>
+                <a style="color: #f04e30; font-weight: bold; position: relative; top: -22px;">+6282146409559</a>
+                <a href="tel:+6282146409559" 
+                style="display: inline-block; position: relative; top: -22px; padding: 10px 20px; background-color: #f04e30; color: #fff; font-weight: bold; border-radius: 5px; text-decoration: none;">
+                Contact
+                </a>
+
+            
+              </div>
+          </div>
+      
+          <!-- Certified Section -->
+          <div style="flex: 1; min-width: 300px;">
+            <p style="margin: 5px 0; font-weight: bold; margin-right: 36px; color: #ddd;">
+                <img src="img2/logo.png" 
+                alt="B Corp Logo" 
+                style="vertical-align: middle; width: 80px; height: auto; ">
+              ANA PAINTING
+            </p>
+            <p style="margin-top: 10px; font-size: 21px; text-align: justify; color: #ddd;">
+              Kami bergerak di bidang pengecetan motor, yang dimana pengecetan yang kami layani yaitu full body painting, custom design, restorasi cat lama dan pelapisan anti-gores.
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div style="flex: 1; min-width: 300px;">
+            <p style="font-size: 21px; font-weight: bold; color: #ddd;">Kunjunga Kami</p>
+            <p style="margin-bottom: 12px; text-align: justify; font-size: 18px; color: #ddd; position: relative; bottom: 5px">
+                R4Q2+QJJ, Jl. I Gusti Ketut Jejer, Sambangan, Kec. Sukasada, Kabupaten Buleleng, Bali 81161
+              <br>
+              <br>
+              <a href="https://www.google.com/maps/place/Warung+Bu+Novi/@-8.1618161,115.1007316,151a,35y,28.13h,45t/data=!3m1!1e3!4m6!3m5!1s0x2dd191fed1a483ab:0x980ff080dd06df8d!8m2!3d-8.1605449!4d115.1015274!16s%2Fg%2F11f66qd9nf?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
+                    target="_blank" 
+                    style="color: #f04e30; text-decoration: none;">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Lihat di Google Maps
+                    </a><br>
+            </p>
+          </div>
+        </div>
+      
+        <!-- Footer Bottom Section -->
+        <div style="margin-top: 40px; text-align: center; font-size: 22px; color: #aaa;">
+          <span>© 2024 Godlife Nehrad Anton Hindom</span>
+        </div>
+      </footer>
+      
+
+    
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
+
+
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Mencegah form reload
+
+            // Ambil data input dari form
+            const name = document.getElementById('name').value;
+            const motor = document.getElementById('motor').value;
+            const model = document.getElementById('model').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Format pesan untuk WhatsApp
+            const waMessage = `Halo, saya ingin memesan layanan pengecatan motor:
+            Nama: ${name}
+            Jenis Motor: ${motor}
+            Model: ${model}
+            Jenis Layanan: ${service}
+            Pesan Tambahan: ${message}`;
+
+            // Ganti dengan nomor WhatsApp tujuan (gunakan format internasional tanpa tanda "+")
+            const waNumber = '6282190735101'; // Contoh: 6281234567890 (62 adalah kode negara Indonesia)
+
+            // Buat URL WhatsApp API
+            const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
+            // Arahkan user ke URL WhatsApp
+            window.open(waURL, '_blank');
+            
+        }
+
+
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>
